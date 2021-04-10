@@ -1,0 +1,11 @@
+.empty-cart {
+  text-align: center;
+}
+span{
+  background-color: #2766CC;
+  padding: .5rem .8rem;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  margin-left: .7rem;
+}

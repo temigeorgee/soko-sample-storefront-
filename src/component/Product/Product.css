@@ -1,0 +1,81 @@
+.search {
+  border: 2px solid transparent;
+  overflow: auto;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #f0f0f0;
+  width: 85%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -20px;
+}
+
+.search input[type="text"] {
+  border: 0px;
+  width: 67%;
+  padding: 10px 10px;
+  background-color: #f0f0f0;
+}
+
+.search input[type="text"]:focus {
+  outline: 0;
+}
+
+.search input[type="submit"] {
+  border: 0px;
+  background: none;
+  background-color: #f8de4b;
+  color: #5480b0;
+  float: right;
+  padding: 5px 15px;
+  font-size: 1.5rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+.category-title {
+  margin-left: 1.85rem;
+}
+.cart-body {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  margin-top: 1rem;
+}
+.cart-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.cart-image img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+.btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px 15px;
+}
+.btn-add {
+  padding: 5px 15px;
+  outline: none;
+  border: 1px solid #5d8cd9;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #5d8cd9;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 780px) {
+  .search {
+    width: 85%;
+    margin: 0 auto;
+    top: 0px;
+  }
+}
