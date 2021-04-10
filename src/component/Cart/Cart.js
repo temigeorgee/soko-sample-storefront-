@@ -5,8 +5,8 @@ import './Cart.css';
 import Animatedimage from './AnimatedImage';
 import CartItems from './CartItems';
 function Cart({ totalItems, cart }) {
-  console.log(cart, 'my cart');
-  const isEmpty = !cart.line_items.length;
+  // console.log(cart, 'my cart');
+  // const isEmpty = !cart.line_items;
   const EmptyCart = () => (
     <>
       <Animatedimage />
@@ -18,34 +18,34 @@ function Cart({ totalItems, cart }) {
   );
   const FullCart = () => (
     <>
+      {cart.line_items.map((item) => {
+        return <CartItems key={item.id} item={item} />;
+      })}
       <div className="container">
-        {cart.line_items.map((item) => {
-          <div className="container" key={item.id}>
-            <CartItems item={item} />
-          </div>;
-        })}
-
-        <div className="cardDetials">
-          <h4>
-            subtotal :{cart.subtotal_formatted_with_symbol}
-            <button type="button" className="btn">
-              empty cart
-            </button>
-            <button type="button" className="btn">
-              checkout
-            </button>
-          </h4>
+        <h4 className="cart-subtotal">
+          Subtotal : {cart.subtotal.formatted_with_symbol}
+        </h4>
+        <div className="cartDetials">
+          <button type="button" className="btn btn-empty">
+            empty cart
+          </button>
+          <button type="button" className="btn btn-checkout">
+            checkout
+          </button>
         </div>
       </div>
     </>
   );
+  if (!cart.line_items) return 'loading ...';
+  console.log(cart, 'items');
   return (
     <>
       <br />
       <h2 className="category-title">
         Bag <span className="total-cart-num">{totalItems}</span>
       </h2>
-      {isEmpty ? <EmptyCart /> : <FullCart />}
+      <br />
+      {!cart.line_items.length ? <EmptyCart /> : <FullCart />}
     </>
   );
 }

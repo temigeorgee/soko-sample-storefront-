@@ -25,7 +25,7 @@ function Home() {
     fetchProducts();
     fetchCart();
   }, []);
-  console.log(setCart, 'main cart');
+  // console.log(setCart, 'main cart');
   return (
     <div className="main-products">
       <div className="min-header">
