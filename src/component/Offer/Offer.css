@@ -1,0 +1,25 @@
+.offers{
+    margin: 3.2rem auto;
+}
+.offertext{
+    color: #fff;
+    text-align: center;
+}
+.offerimg{
+    color: #F8DE4B;
+    font-size: 2rem;
+    padding-bottom: .5rem;
+    display: flex;
+    justify-content: center;
+}
+.small-container {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+@media only screen and (max-width: 600px) {
+    .offer-1{
+        flex-direction: column;
+    }
+}

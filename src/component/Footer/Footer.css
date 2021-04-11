@@ -1,0 +1,14 @@
+.footer-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 3rem;
+    text-transform: capitalize;
+}
+.footer-title{
+    color: #B0B0B0;
+    text-transform: uppercase;
+}
