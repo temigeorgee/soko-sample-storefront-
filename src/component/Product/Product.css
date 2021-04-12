@@ -70,11 +70,148 @@
   text-transform: capitalize;
   cursor: pointer;
 }
+.text{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  color:hsla(0,0,.4,0.1);
+  -webkit-box-orient: vertical;
+  margin: .5rem 0;
+}
+.price{
+  color: #afafaf;
+}
+.cart-image h3{
+  left: 0;
+  top:0px;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  color: #5d8cd9;
+  font-size: 16px;
+  font-weight: 200;
+  text-transform: capitalize;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(39, 38, 67, 0.08);
+  transition: opacity 0.3s ease-in;
+}
 
+.cart-image:hover {
+  transform: scale(1.0);
+  box-shadow: 4px 4px 8px rgba(39, 38, 67, 0.08);
+}
+.cart-image:hover h3{
+  opacity: 1;
+}
 @media only screen and (min-width: 150px) and (max-width: 780px) {
   .search {
     width: 85%;
     margin: 0 auto;
     top: 0px;
+  }
+}
+
+/* product-view */
+
+.product-container{
+display: grid;
+grid-template-columns: auto;
+gap: 24px;
+padding: .9rem 4rem ;
+justify-content: center;
+}
+
+
+
+.col-4{
+  flex-basis: 100%;
+}
+.col-6{
+  flex-basis: 100%;
+}
+.product-image img{
+  width: clamp(15rem, 60vw, 25rem);
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgba(39, 38, 67, 0.08);
+
+}
+.product-btns{
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+}
+.product-name{
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 13px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  margin: .8rem 1.5rem ;
+  text-align: left;
+}
+.product-name p{
+  color:#A0A0A0;
+
+}
+.product-price{
+  margin: .8rem 1.5rem ;
+
+}
+.product-quantity{
+  margin: .8rem 1.5rem ;
+
+}
+
+.btn-tocart{
+  padding: 10px 25px;
+  outline: none;
+  background-color: transparent;
+  color: #316CC5;
+  border: 1px solid #316CC5;
+  transition: all .3s ease-out;
+  cursor: pointer;
+  text-transform: capitalize;
+  border-radius: 5px;
+}
+.btn-buynow{
+  margin-top: 1rem;
+  padding: 10px 30px;
+  outline: none;
+  background-color: #F8DE4B;
+  color: #316CC5;
+  border: 1px solid #F8DE4B;
+  transition: all .3s ease-out;
+  cursor: pointer;
+  text-transform: capitalize;
+  border-radius: 5px;
+}
+
+
+@media (min-width:720px) {
+  .product-container{
+    grid-template-columns: auto 1fr;
+  }
+  .min-header {
+    grid-column: 1 / span 3;
+  }
+  .header {
+    grid-column: 4 / span 9;
+  }
+  .product-btns{
+    display: flex;
+    align-items: center;
+  margin-left: -16rem;
+    flex-direction: row;
+  }
+  
+  .btn-buynow{
+    margin-top: 0 !important;
+    margin-left: 5rem;
+  
+
   }
 }

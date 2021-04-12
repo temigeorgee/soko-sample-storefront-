@@ -5,7 +5,7 @@ const MinHeader = () => {
     <div className="minheader">
       <div className="container">
         <div className="minheader-text">
-          <h3>Store made with soko </h3>
+          <h4>Store made with soko </h4>
         </div>
       </div>
     </div>

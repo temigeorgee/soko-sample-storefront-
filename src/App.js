@@ -8,6 +8,7 @@ import {
   BrowserRouter,
 } from 'react-router-dom';
 import CartPages from './pages/CartPages';
+import ProductView from './pages/ProductView';
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -66,6 +67,13 @@ export default function App() {
             handleUpdateCartQuantity={handleUpdateCartQuantity}
             handleRemoveFromCart={handleRemoveFromCart}
             handleEmptyCart={handleEmptyCart}
+          />
+        </Route>
+        <Route path="/product-details/:id">
+          <ProductView
+            // product={products}
+            cart={cart}
+            handleAddToCart={handleAddToCart}
           />
         </Route>
       </Switch>

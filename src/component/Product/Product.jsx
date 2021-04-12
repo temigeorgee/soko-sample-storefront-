@@ -5,14 +5,15 @@ const Product = ({ name, price, media,onAddToCart,id }) => {
   return (
     <div className="container">
       <div className="cart-body">
+          <Link to={`/product-details/${id}`} style={{ textDecoration: 'none' }}>
         <div className="cart-image">
-          <Link to={`/product-details/${id}`}>
-          <img src={media} alt="" />
-          </Link>
+          <img src={media} alt="" className="product-img" />
+          <h3 className="product-view">view</h3>
         </div>
+          </Link>
         <div className="cart-info">
           <p className="text">{name}</p>
-          <p>Price:{price}</p>
+          <p className="price">{price}</p>
         </div>
         <div className="btn">
           <button type="submit" className="btn-add" onClick={()=> onAddToCart(id,1)}>

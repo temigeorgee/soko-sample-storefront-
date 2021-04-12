@@ -1,5 +1,5 @@
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 710px) {
 .nav-menu{
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@
   }
   .nav-link:hover {
     width: 25vw;
-    /* text-align: center; */
+    
     justify-content: center;
     background: #1c92d2; /* fallback for old browsers */
     background: -webkit-linear-gradient(
@@ -48,12 +48,6 @@
 }
 .nav-link {
   color: #828282;
-
-  /* padding: 0.6rem 1rem; */
-
   cursor: pointer;
 }
 
-/* ul {
-  list-style-type: none;
-} */

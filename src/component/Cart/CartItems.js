@@ -9,6 +9,7 @@ function CartItems({ item, onRemoveFromCart, onUpdateCartQuantity }) {
           <Link to={`product-view/${item.id}`}>
             <div className="cartmedia">
               <img src={item.media.source} alt={item.name} />
+              <h3 className="prodct-view">view</h3>
             </div>
           </Link>
           <div className="cartcontent">
