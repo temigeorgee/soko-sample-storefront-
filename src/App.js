@@ -49,7 +49,7 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/">
+        <Route path="/home">
           <Home
             product={products}
             cart={cart}
