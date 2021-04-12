@@ -81,7 +81,7 @@ function ProductView({ handleAddToCart, cart }) {
               >
                 add to bag
               </button>
-              <Link to={'/'} style={{ textDecoration: 'none' }}>
+              <Link style={{ textDecoration: 'none' }}>
                 <button type="button" className="btn btn-home btn-buynow">
                   buy now
                 </button>
