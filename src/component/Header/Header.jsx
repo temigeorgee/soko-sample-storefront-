@@ -20,7 +20,7 @@ const Header = ({ totalItems }) => {
                 />
               </div>
               <div className="header-text">
-              <Link to={'/home'} style={{ textDecoration: 'none' }}>
+              <Link to={'/'} style={{ textDecoration: 'none' }}>
                 <h3>Target</h3>
               </Link>
                 <p> Charm Towers, plot 12, Nkruma Rd, Kampala,Ug</p>

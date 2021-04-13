@@ -22,7 +22,7 @@ function Cart({
         <p>Start shopping to add items to your bag</p>
       </div>
       <br />
-      <Link to={'/home'} style={{ textDecoration: 'none' }}>
+      <Link to={'/'} style={{ textDecoration: 'none' }}>
         <button
           type="button"
           className="btn btn-home"

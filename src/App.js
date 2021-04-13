@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import CartPages from './pages/CartPages';
 import ProductView from './pages/ProductView';
+import { Redirect } from 'react-router-dom';
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -28,54 +29,65 @@ export default function App() {
   };
   const handleUpdateCartQuantity = async (productId, quantity) => {
     const { cart } = await commerce.cart.update(productId, { quantity });
-    // setCart(response.cart)
     setCart(cart);
   };
   const handleRemoveFromCart = async (productId) => {
     const { cart } = await commerce.cart.remove(productId);
-    // setCart(response.cart)
+
     setCart(cart);
   };
   const handleEmptyCart = async () => {
     const { cart } = await commerce.cart.empty();
-    // setCart(response.cart)
+
     setCart(cart);
   };
   useEffect(() => {
     fetchProducts();
     fetchCart();
   }, []);
-  // console.log(products, 'main procd soko');
+
   return (
     <Router>
       <Switch>
-        <Route path="/home">
-          <Home
-            product={products}
-            cart={cart}
-            handleAddToCart={handleAddToCart}
-            handleUpdateCartQuantity={handleUpdateCartQuantity}
-            handleRemoveFromCart={handleRemoveFromCart}
-            handleEmptyCart={handleEmptyCart}
-          />
-        </Route>
-        <Route path="/cart">
-          <CartPages
-            product={products}
-            cart={cart}
-            handleAddToCart={handleAddToCart}
-            handleUpdateCartQuantity={handleUpdateCartQuantity}
-            handleRemoveFromCart={handleRemoveFromCart}
-            handleEmptyCart={handleEmptyCart}
-          />
-        </Route>
-        <Route path="/product-details/:id">
-          <ProductView
-            // product={products}
-            cart={cart}
-            handleAddToCart={handleAddToCart}
-          />
-        </Route>
+        <Route
+          exact
+          path="/"
+          component={() => (
+            <Home
+              product={products}
+              cart={cart}
+              handleAddToCart={handleAddToCart}
+              handleUpdateCartQuantity={handleUpdateCartQuantity}
+              handleRemoveFromCart={handleRemoveFromCart}
+              handleEmptyCart={handleEmptyCart}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/cart"
+          component={() => (
+            <CartPages
+              product={products}
+              cart={cart}
+              handleAddToCart={handleAddToCart}
+              handleUpdateCartQuantity={handleUpdateCartQuantity}
+              handleRemoveFromCart={handleRemoveFromCart}
+              handleEmptyCart={handleEmptyCart}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/product-details/:id"
+          component={() => (
+            <ProductView
+              // product={products}
+              cart={cart}
+              handleAddToCart={handleAddToCart}
+            />
+          )}
+        />
       </Switch>
     </Router>
   );
