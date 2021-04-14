@@ -42,59 +42,64 @@ function ProductView({ handleAddToCart, cart }) {
 
   return (
     <>
-      <div className="min-header">
-        <MinHeader />
-      </div>
-      <div className="header">
-        <Header totalItems={cart.total_items} />
-      </div>
-      <div className="container">
-        <div className="product-container">
-          <div className="col-4">
+      <div className="products-view">
+        <div className="min-header">
+          <MinHeader />
+        </div>
+        <div className="header">
+          <Header totalItems={cart.total_items} />
+        </div>
+        <div className="col-4">
+          <div className="container">
             <div className="product-image">
               <img src={product.src} alt="" />
             </div>
           </div>
-          <div className="col-6">
-            <div className="product-name">
-              <h4>{product.name}</h4>
+        </div>
+        <div className="col-6">
+          <div className="container">
+            <div className="product-detail">
+              <div className="product-name">
+                <h4>{product.name}</h4>
+                <br />
+                <p>{product.description}</p>
+              </div>
               <br />
-              <p>{product.description}</p>
-            </div>
-            <br />
-            <h3 className="product-price">{product.price}</h3>
-            <br />
-            <div className="cart-quantity product-quantity">
-              <button type="button" className="btn-quantity">
-                -
-              </button>
-              <p>1</p>
-              <button type="button" className="btn-quantity">
-                +
-              </button>
-            </div>
-            <div className="product-btns">
-              <button
-                type="submit"
-                className="btn btn-add btn-tocart"
-                onClick={() => handleAddToCart(product.id, 1)}
-              >
-                add to bag
-              </button>
-              <Link style={{ textDecoration: 'none' }}>
-                <button type="button" className="btn btn-home btn-buynow">
-                  buy now
+              <h3 className="product-price">{product.price}</h3>
+              <br />
+              <div className="cart-quantity product-quantity">
+                <button type="button" className="btn-quantity">
+                  -
                 </button>
-              </Link>
+                <p>1</p>
+                <button type="button" className="btn-quantity">
+                  +
+                </button>
+              </div>
+              <div className="product-btns">
+                <button
+                  type="submit"
+                  className="btn btn-add btn-tocart"
+                  onClick={() => handleAddToCart(product.id, 1)}
+                >
+                  add to bag
+                </button>
+                <Link style={{ textDecoration: 'none' }}>
+                  <button type="button" className="btn btn-home btn-buynow">
+                    buy now
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="offer">
-        <Offer />
-      </div>
-      <div className="footer">
-        <Footer />
+        <br />
+        <div className="offer">
+          <Offer />
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
     </>
   );

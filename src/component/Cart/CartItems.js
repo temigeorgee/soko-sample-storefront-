@@ -4,12 +4,15 @@ import { FaTrash } from 'react-icons/fa';
 function CartItems({ item, onRemoveFromCart, onUpdateCartQuantity }) {
   return (
     <>
-      <div className="container">
+      <div className="main-cart">
         <div className="cart-container">
-          <Link to={`product-view/${item.id}`}>
-            <div className="cartmedia">
-              <img src={item.media.source} alt={item.name} />
-              <h3 className="prodct-view">view</h3>
+          <Link
+            to={`/product-details/${item.id}`}
+            style={{ textDecoration: 'none' }}
+          >
+            <div className="cart-image">
+              <img src={item.media.source} alt="" className="product-img" />
+              <h3 className="product-view">view</h3>
             </div>
           </Link>
           <div className="cartcontent">

@@ -16,30 +16,32 @@ function Cart({
   const isEmpty = !cart.line_items;
   const EmptyCart = () => (
     <>
-      <Animatedimage />
-      <div className="empty-cart">
-        <h3> It's empty here</h3>
-        <p>Start shopping to add items to your bag</p>
+      <div className="empty-cart-container">
+        <Animatedimage />
+        <div className="empty-cart">
+          <h3> It's empty here</h3>
+          <p>Start shopping to add items to your bag</p>
+        </div>
+        <br />
+        <Link to={'/'} style={{ textDecoration: 'none' }}>
+          <button
+            type="button"
+            className="btn btn-home"
+            style={{
+              margin: '0 auto',
+              outline: 'none',
+              backgroundColor: '#F8DE4B',
+              color: '#fff',
+              border: '1px solid #F8DE4B',
+              transition: 'all .3s ease-out',
+              cursor: 'pointer',
+            }}
+          >
+            Go to Homepage
+          </button>
+        </Link>
+        <br />
       </div>
-      <br />
-      <Link to={'/'} style={{ textDecoration: 'none' }}>
-        <button
-          type="button"
-          className="btn btn-home"
-          style={{
-            margin: '0 auto',
-            outline: 'none',
-            backgroundColor: '#F8DE4B',
-            color: '#fff',
-            border: '1px solid #F8DE4B',
-            transition: 'all .3s ease-out',
-            cursor: 'pointer',
-          }}
-        >
-          Go to Homepage
-        </button>
-      </Link>
-      <br />
     </>
   );
   const FullCart = () => (
@@ -54,21 +56,24 @@ function Cart({
           />
         );
       })}
-      <div className="container">
-        <h4 className="cart-subtotal">
-          Subtotal : {cart.subtotal.formatted_with_symbol}
-        </h4>
-        <div className="cartDetials">
-          <button
-            type="button"
-            className="btn btn-empty"
-            onClick={handleEmptyCart}
-          >
-            empty cart
-          </button>
-          <button type="button" className="btn btn-checkout">
-            checkout
-          </button>
+      <div className="cart-results">
+        <div className="container">
+          <div className="cart-subtotal">
+            <h4>subtotal</h4>
+            <h4>{cart.subtotal.formatted_with_symbol}</h4>
+          </div>
+          <div className="cartDetials">
+            <button
+              type="button"
+              className="btn btn-empty"
+              onClick={handleEmptyCart}
+            >
+              empty cart
+            </button>
+            <button type="button" className="btn btn-checkout">
+              checkout
+            </button>
+          </div>
         </div>
       </div>
     </>
@@ -84,18 +89,7 @@ function Cart({
         </div>
       </div>
     );
-  // console.log(cart, 'items');
-  return (
-    <>
-      <br />
-      <h2 className="category-title">
-        Bag <span className="total-cart-num">{totalItems}</span>
-      </h2>
-      <br />
-
-      {!cart.line_items.length ? <EmptyCart /> : <FullCart />}
-    </>
-  );
+  return <>{!cart.line_items.length ? <EmptyCart /> : <FullCart />}</>;
 }
 
 export default Cart;

@@ -13,9 +13,9 @@ const defaultOptions = {
 
 function Animatedimage() {
   return (
-    <div>
-      <Lottie options={defaultOptions} height={350} width={350} />
-    </div>
+    <>
+      <Lottie options={defaultOptions} height={320} width={320} />
+    </>
   );
 }
 

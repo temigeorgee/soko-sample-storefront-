@@ -6,18 +6,20 @@ import MinHeader from '../component/Header/MinHeader';
 function CartPages(props) {
   return (
     <>
-      <div className="min-header">
-        <MinHeader />
+      <div className="cart-pages-container">
+        <div className="min-header">
+          <MinHeader />
+        </div>
+        <div className="header">
+          <Header totalItems={props.cart.total_items} />
+        </div>
+        <Cart
+          cart={props.cart}
+          handleUpdateCartQuantity={props.handleUpdateCartQuantity}
+          handleRemoveFromCart={props.handleRemoveFromCart}
+          handleEmptyCart={props.handleEmptyCart}
+        />
       </div>
-      <div className="header">
-        <Header totalItems={props.cart.total_items} />
-      </div>
-      <Cart
-        cart={props.cart}
-        handleUpdateCartQuantity={props.handleUpdateCartQuantity}
-        handleRemoveFromCart={props.handleRemoveFromCart}
-        handleEmptyCart={props.handleEmptyCart}
-      />
     </>
   );
 }

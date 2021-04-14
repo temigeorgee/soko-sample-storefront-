@@ -57,6 +57,7 @@
   }
   .bag {
     grid-column: 9 / span 4;
+    overflow: hidden;
   }
   .offer {
     grid-column: 1 / span 12;
