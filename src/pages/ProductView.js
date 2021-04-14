@@ -62,7 +62,9 @@ function ProductView({ handleAddToCart, cart }) {
               <div className="product-name">
                 <h4>{product.name}</h4>
                 <br />
-                <p>{product.description}</p>
+                <p
+                  dangerouslySetInnerHTML={{ __html: product.description }}
+                ></p>
               </div>
               <br />
               <h3 className="product-price">{product.price}</h3>
