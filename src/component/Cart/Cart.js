@@ -31,7 +31,7 @@ function Cart({
               margin: '0 auto',
               outline: 'none',
               backgroundColor: '#F8DE4B',
-              color: '#fff',
+              color: '#2766CC',
               border: '1px solid #F8DE4B',
               transition: 'all .3s ease-out',
               cursor: 'pointer',
