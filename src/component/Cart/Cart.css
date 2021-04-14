@@ -168,12 +168,13 @@ margin-left: .9rem;
 }
 .main-cart{
   grid-column: 1 /span 12;
-  padding: 2rem 5rem;
+  padding: 2rem 2rem 1rem 1rem;
+  
 }
 .cart-results{
   grid-column: 8 / span 4;
   width: 40vw;
-  padding: 0 2rem;
+  padding: 0 4.5rem;
 
 }
 .btn-empty{
