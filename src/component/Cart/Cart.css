@@ -9,7 +9,7 @@ span{
   font-size: 1rem;
   margin-left: .7rem;
 }
-.cartmedia img {
+.img-bg {
   width: 80px;
   height: 80px;
   border-radius: 8px;
@@ -73,8 +73,11 @@ border-radius: 8px;
 text-transform: capitalize;
 cursor: pointer;
 margin-right: .9rem;
-
-
+transition: all .3s ease-in-out;
+}
+.btn-empty:hover{
+  background-color: red;
+  color: #fff;
 }
 .btn-checkout{
   color: #fff;
@@ -84,6 +87,10 @@ margin-right: .9rem;
   border: 1px solid #2766CC;
   border-radius: 8px;
   cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+.btn-checkout:hover{
+background-color: blue;
 }
 .btn-home:hover{
   background-color: #f0cd08 !important;

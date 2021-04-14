@@ -6,15 +6,10 @@ function CartItems({ item, onRemoveFromCart, onUpdateCartQuantity }) {
     <>
       <div className="main-cart">
         <div className="cart-container">
-          <Link
-            to={`/product-details/${item.id}`}
-            style={{ textDecoration: 'none' }}
-          >
-            <div className="cart-image">
-              <img src={item.media.source} alt="" className="product-img" />
-              <h3 className="product-view">view</h3>
-            </div>
-          </Link>
+          <div className="cart-media">
+            <img src={item.media.source} alt="" className="img-bg" />
+          </div>
+
           <div className="cartcontent">
             <h4 className="productname">{item.name}</h4>
             <div className="cart-quantity">

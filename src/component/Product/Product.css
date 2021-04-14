@@ -14,7 +14,7 @@
 
 .search input[type="text"] {
   border: 0px;
-  width: 67%;
+  width: 80%;
   padding: 10px 10px;
   background-color: #f0f0f0;
 }
@@ -67,6 +67,11 @@
   color: #5d8cd9;
   text-transform: capitalize;
   cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+.btn-add:hover{
+  background-color: #5480b0;
+  color: #fff;
 }
 .text{
   display: -webkit-box;
